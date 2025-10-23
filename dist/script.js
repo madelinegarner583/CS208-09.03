@@ -3,6 +3,23 @@
 function sayHello() {
     alert("Hello, world from javascript!");
 }
+
+function isStrongPassword(password) {
+    if (password.length < 8) {
+        return false;
+    }
+    if (password.includes("password")) {
+        return false;
+    }
+    for (let i = 0; i < password.length; i++) {
+        if (i < password.charCodeAt(65) || i > password.charCodeAt(90)) {
+            return false;
+        }
+        //Citation for character codes: https://www.ascii-code.com/
+    }
+    return true;
+}
+
 // This function will be called when the link is clicked
 // It shows an alert with a message
 // Ensure the DOM is fully loaded before attaching the event listener
