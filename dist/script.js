@@ -1,14 +1,28 @@
 // This is a simple JavaScript file that adds interactivity to the HTML page
 // It defines a function to show an alert when a link is clicked
+/*
 function sayHello() {
     alert("Hello, world from javascript!");
+}
+*/
+
+/* NOTE: I could not get my strong/weak results to work correctly!
+         Any advice on what I could do to fix it would be very helpful!
+*/
+function evaluatePassword() {
+    if (isStrongPassword === true) {
+        alert("Password is strong");
+    }
+    else {
+        alert("Password is weak");
+    }
 }
 
 function isStrongPassword(password) {
     if (password.length < 8) {
         return false;
     }
-    if (password.includes("password")) {
+    if (password.toLowerCase().includes("password")) {
         return false;
     }
     for (let i = 0; i < password.length; i++) {
@@ -20,9 +34,18 @@ function isStrongPassword(password) {
     return true;
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        evaluatePassword();
+    });
+});
+
 // This function will be called when the link is clicked
 // It shows an alert with a message
 // Ensure the DOM is fully loaded before attaching the event listener
+/*
 document.addEventListener("DOMContentLoaded", function() {
     const link = document.getElementById("hello-link");
     if (!link) {
@@ -71,3 +94,4 @@ document.addEventListener("DOMContentLoaded", function() {
             jokeDisplay.textContent = joke;
     });
 });
+*/

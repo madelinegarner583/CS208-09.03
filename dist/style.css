@@ -1,10 +1,11 @@
 form {
-  margin: auto;
-  width: 300px;
   border-style: solid;
   border-color: darkgray;
+  border-radius: 10px;
   border-width: 3px;
   padding: 5px 5px 60px 5px;
+  margin: auto;
+  width: 300px;
 }
 
 h1, p {
